@@ -29,12 +29,24 @@ headerList=FullTable.find_all("th")
 # print(headerList) # all header tag with contents
 
 #all header titles iterated
+print("Table Headers:")
 for i in headerList:
         x=i.text 
         print(x)
         
-        
-
+#get table data
+# all rows
+AllRow=FullTable.find_all("tr")      
+# print(AllRow)
+print("Table Data:")
+for i in AllRow[1:]:
+        tData=i.find_all("td")
+        # print(tData)
+        # row=[tr.text for tr in tData]
+        for tr in tData:
+            print(tr.text," ")
+        # print(row)
+        print("\n")
 
 
 
